@@ -46,63 +46,46 @@ class ViewController: UIViewController {
         let offsets = [0, 10, 20]
         
         
-    //Dispatch Group
-        let group = DispatchGroup()
+    //Dispatch Semaphore
+        let semaphore = DispatchSemaphore(value: 1) // value>0，semaphore有資源去執行非同步程式
+//        let queue = DispatchQueue(label: "hello")
+
         
         //用loop去拿三個url資料
         for i in 0 ..< offsets.count  {
-            var parameters:Parameters = ["scope": "resourceAquire", "limit": "1", "offset": String(offsets[i])]
             
-            //進入group
-            group.enter()
-            AF.request(urlString, parameters: parameters).responseDecodable(of: Response.self) { response in
+            // 要被放入“非同步”queue裡
+            DispatchQueue.global().async {
                 
-                //拿到成果報告
-                switch response.result {
-                case .success(let response):
-                    //(解碼成功，獲得資料) -> 放入district和location資訊
-                    print(response.result.results[0].district)
+                var parameters:Parameters = ["scope": "resourceAquire", "limit": "1", "offset": String(offsets[i])]
+                
+                // wait 等待資源，有資源（value>0）的話就繼續執行，若value<=0時，則程式無法執行（擺在queue裡面繼續等資源），
+                // 當開始實行時，會將semaphore的資源-1，
+                semaphore.wait()
+                
+                AF.request(urlString, parameters: parameters).responseDecodable(of: Response.self) { response in
                     
-                    //result存到result array
-//                    self.districtResultArray[i] = response.result.results[0].district
-//                    self.locationResultArray[i] = response.result.results[0].location
-                    self.districtResultArray.append(response.result.results[0].district)//用append出現順序會不一定
-                    self.locationResultArray.append(response.result.results[0].location)
-                    
-                case .failure(let error):
-                    print("Error: \(error)")
+                    //拿到成果報告
+                    switch response.result {
+                    case .success(let response):
+                        //(解碼成功，獲得資料) -> 放入district和location資訊
+                        print(response.result.results[0].district)
+                        
+                        //直接修改label text
+                        DispatchQueue.main.async {
+                            self.districtLabelArray?[i].text = response.result.results[0].district
+                            self.locationLabelArray?[i].text = response.result.results[0].location
+                        }
+                        
+                    case .failure(let error):
+                        print("Error: \(error)")
+                    }
+                    semaphore.signal()
                 }
-                group.leave() //結束離開group
             }
-//            //等3個API都取得資料，再一起放入label
-//            group.notify(queue: DispatchQueue.global()) {
-//                print("all done, start changing label name")
-//
-//                    DispatchQueue.main.async { //更新UI
-//
-//                        print(self.districtResultArray)
-//                        self.districtLabelArray?[i].text = self.districtResultArray[i]
-//                        self.locationLabelArray?[i].text = self.locationResultArray[i]
-//                    }
-//
-//            }
             
         }
         
-        //等3個API都取得資料，再一起放入label
-        group.notify(queue: DispatchQueue.global()) {
-            print("all done, start changing label name")
-
-            for i in 0 ..< (self.districtResultArray.count) {
-                DispatchQueue.main.async { //更新UI
-
-                    print(self.districtResultArray)
-                    self.districtLabelArray?[i].text = self.districtResultArray[i]
-                    self.locationLabelArray?[i].text = self.locationResultArray[i]
-                }
-            }
-
-        }
     }
     
     
