@@ -48,14 +48,14 @@ class ViewController: UIViewController {
         
     //Dispatch Semaphore
         let semaphore = DispatchSemaphore(value: 1) // value>0，semaphore有資源去執行非同步程式
-//        let queue = DispatchQueue(label: "hello")
+        let queue = DispatchQueue(label: "hello")
 
         
         //用loop去拿三個url資料
         for i in 0 ..< offsets.count  {
             
-            // 要被放入“非同步”queue裡
-            DispatchQueue.global().async {
+            // 要被放入queue裡
+            queue.async {
                 
                 var parameters:Parameters = ["scope": "resourceAquire", "limit": "1", "offset": String(offsets[i])]
                 
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
                     case .failure(let error):
                         print("Error: \(error)")
                     }
-                    semaphore.signal()
+                    semaphore.signal() // 執行到這個時候，會釋出資源（+1），所以會讓下一個非同步執行程式可以繼續（一定會拿到api再繼續）
                 }
             }
             
