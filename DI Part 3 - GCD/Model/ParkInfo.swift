@@ -8,7 +8,7 @@
 import Foundation
 
 struct ParkInfo: Codable {
-    let id: Int
+    let _id: Int
     let location: String
     let district: String
     let address: String

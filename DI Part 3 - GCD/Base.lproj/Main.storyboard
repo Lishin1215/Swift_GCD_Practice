@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipN-5r-wvu">
-                                <rect key="frame" x="233" y="618" width="100" height="50"/>
+                                <rect key="frame" x="183" y="618" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="1JV-15-5zF"/>
+                                    <constraint firstAttribute="width" constant="150" id="1JV-15-5zF"/>
                                     <constraint firstAttribute="height" constant="50" id="BrC-6O-92c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -48,10 +48,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pR-SD-PBM">
-                                <rect key="frame" x="233" y="401" width="100" height="50"/>
+                                <rect key="frame" x="183" y="401" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SGV-5b-0Xy"/>
-                                    <constraint firstAttribute="width" constant="100" id="fPd-it-zfD"/>
+                                    <constraint firstAttribute="width" constant="150" id="fPd-it-zfD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -68,9 +68,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISv-Gp-3DM">
-                                <rect key="frame" x="233" y="209" width="100" height="50"/>
+                                <rect key="frame" x="183" y="209" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="C3O-DR-pc0"/>
+                                    <constraint firstAttribute="width" constant="150" id="C3O-DR-pc0"/>
                                     <constraint firstAttribute="height" constant="50" id="xYp-XI-PPs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

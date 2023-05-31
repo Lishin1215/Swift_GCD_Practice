@@ -41,14 +41,15 @@ class ViewController: UIViewController {
 
     func getData() {
         
-        let urlString = "https://data.taipei/api/v1/dataset/c7784a9f-e11e-4145-8b72-95b44fdc7b83s"
+        let urlString = "https://data.taipei/api/v1/dataset/c7784a9f-e11e-4145-8b72-95b44fdc7b83"
         
         let offsets = [0, 10, 20]
         
         
-        //Dispatch Group
+    //Dispatch Group
         let group = DispatchGroup()
         
+        //用loop去拿三個url資料
         for i in 0 ..< offsets.count  {
             var parameters:Parameters = ["scope": "resourceAquire", "limit": "1", "offset": String(offsets[i])]
             
@@ -60,11 +61,12 @@ class ViewController: UIViewController {
                 switch response.result {
                 case .success(let response):
                     //(解碼成功，獲得資料) -> 放入district和location資訊
+                    print(response.result.results[0].district)
                     
                     //result存到result array
 //                    self.districtResultArray[i] = response.result.results[0].district
 //                    self.locationResultArray[i] = response.result.results[0].location
-                    self.districtResultArray.append(response.result.results[0].district)
+                    self.districtResultArray.append(response.result.results[0].district)//用append出現順序會不一定
                     self.locationResultArray.append(response.result.results[0].location)
                     
                 case .failure(let error):
@@ -72,25 +74,35 @@ class ViewController: UIViewController {
                 }
                 group.leave() //結束離開group
             }
-            
-           
-        }
-        
-        
-        //等3個API都取得資料，再一起放入label
-        group.notify(queue: DispatchQueue.global()) {
-            print("all done, start changing label name")
-            
-            for i in 0 ..< 3{
-                DispatchQueue.main.async {
-                    
-                    print(self.districtResultArray)
-                    self.districtLabelArray?[i].text = self.districtResultArray[i]
-                    self.locationLabelArray?[i].text = self.locationResultArray[i]
-                }
+            //等3個API都取得資料，再一起放入label
+            group.notify(queue: DispatchQueue.global()) {
+                print("all done, start changing label name")
+                
+                    DispatchQueue.main.async { //更新UI
+                        
+                        print(self.districtResultArray)
+                        self.districtLabelArray?[i].text = self.districtResultArray[i]
+                        self.locationLabelArray?[i].text = self.locationResultArray[i]
+                    }
+
             }
             
         }
+        
+//        //等3個API都取得資料，再一起放入label
+//        group.notify(queue: DispatchQueue.global()) {
+//            print("all done, start changing label name")
+//
+//            for i in 0 ..< (self.districtResultArray.count) {
+//                DispatchQueue.main.async { //更新UI
+//
+//                    print(self.districtResultArray)
+//                    self.districtLabelArray?[i].text = self.districtResultArray[i]
+//                    self.locationLabelArray?[i].text = self.locationResultArray[i]
+//                }
+//            }
+//
+//        }
     }
     
     
