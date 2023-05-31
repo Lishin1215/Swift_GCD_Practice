@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var locationBottomLabel: UILabel!
     
     //用來裝從API抓下來的result (因為到時候要一起更新）
-    var districtResultArray: [String] = []
-    var locationResultArray: [String] = []
+    var districtResultArray: [String] = ["", "", ""]
+    var locationResultArray: [String] = ["", "", ""]
     
     //把label放進array，讓他們可以用loop裝進去
     var districtLabelArray: [UILabel]?
@@ -64,45 +64,45 @@ class ViewController: UIViewController {
                     print(response.result.results[0].district)
                     
                     //result存到result array
-//                    self.districtResultArray[i] = response.result.results[0].district
-//                    self.locationResultArray[i] = response.result.results[0].location
-                    self.districtResultArray.append(response.result.results[0].district)//用append出現順序會不一定
-                    self.locationResultArray.append(response.result.results[0].location)
+                    self.districtResultArray[i] = response.result.results[0].district
+                    self.locationResultArray[i] = response.result.results[0].location
+//                    self.districtResultArray.append(response.result.results[0].district)//用append出現順序會不一定
+//                    self.locationResultArray.append(response.result.results[0].location)
                     
                 case .failure(let error):
                     print("Error: \(error)")
                 }
                 group.leave() //結束離開group
             }
-//            //等3個API都取得資料，再一起放入label
-//            group.notify(queue: DispatchQueue.global()) {
-//                print("all done, start changing label name")
-//
-//                    DispatchQueue.main.async { //更新UI
-//
-//                        print(self.districtResultArray)
-//                        self.districtLabelArray?[i].text = self.districtResultArray[i]
-//                        self.locationLabelArray?[i].text = self.locationResultArray[i]
-//                    }
-//
-//            }
+            //等3個API都取得資料，再一起放入label
+            group.notify(queue: DispatchQueue.global()) {
+                print("all done, start changing label name")
+
+                    DispatchQueue.main.async { //更新UI
+
+                        print(self.districtResultArray)
+                        self.districtLabelArray?[i].text = self.districtResultArray[i]
+                        self.locationLabelArray?[i].text = self.locationResultArray[i]
+                    }
+
+            }
             
         }
         
-        //等3個API都取得資料，再一起放入label
-        group.notify(queue: DispatchQueue.global()) {
-            print("all done, start changing label name")
-
-            for i in 0 ..< (self.districtResultArray.count) {
-                DispatchQueue.main.async { //更新UI
-
-                    print(self.districtResultArray)
-                    self.districtLabelArray?[i].text = self.districtResultArray[i]
-                    self.locationLabelArray?[i].text = self.locationResultArray[i]
-                }
-            }
-
-        }
+//        //等3個API都取得資料，再一起放入label
+//        group.notify(queue: DispatchQueue.global()) {
+//            print("all done, start changing label name")
+//
+//            for i in 0 ..< (self.districtResultArray.count) {
+//                DispatchQueue.main.async { //更新UI
+//
+//                    print(self.districtResultArray)
+//                    self.districtLabelArray?[i].text = self.districtResultArray[i]
+//                    self.locationLabelArray?[i].text = self.locationResultArray[i]
+//                }
+//            }
+//
+//        }
     }
     
     
