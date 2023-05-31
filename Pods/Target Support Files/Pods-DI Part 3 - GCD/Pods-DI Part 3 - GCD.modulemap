@@ -1,0 +1,6 @@
+framework module Pods_DI_Part_3___GCD {
+  umbrella header "Pods-DI Part 3 - GCD-umbrella.h"
+
+  export *
+  module * { export * }
+}

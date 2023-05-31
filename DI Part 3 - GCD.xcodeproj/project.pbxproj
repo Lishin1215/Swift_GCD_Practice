@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B155448A2E08D645D1571FE /* Pods_DI_Part_3___GCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A955B006CCDB1DA4BBF2647C /* Pods_DI_Part_3___GCD.framework */; };
 		5B47176D2A2650230038121D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47176C2A2650230038121D /* AppDelegate.swift */; };
 		5B47176F2A2650230038121D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47176E2A2650230038121D /* SceneDelegate.swift */; };
 		5B4717712A2650230038121D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4717702A2650230038121D /* ViewController.swift */; };
 		5B4717742A2650230038121D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4717722A2650230038121D /* Main.storyboard */; };
 		5B4717762A2650240038121D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4717752A2650240038121D /* Assets.xcassets */; };
 		5B4717792A2650240038121D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4717772A2650240038121D /* LaunchScreen.storyboard */; };
+		5B4717812A2657700038121D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4717802A2657700038121D /* Response.swift */; };
+		5B4717832A26D6E20038121D /* ParkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4717822A26D6E20038121D /* ParkData.swift */; };
+		5B4717862A26D77D0038121D /* ParkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4717852A26D77D0038121D /* ParkInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,12 @@
 		5B4717752A2650240038121D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4717782A2650240038121D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B47177A2A2650240038121D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B4717802A2657700038121D /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		5B4717822A26D6E20038121D /* ParkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkData.swift; sourceTree = "<group>"; };
+		5B4717852A26D77D0038121D /* ParkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkInfo.swift; sourceTree = "<group>"; };
+		69F52F90AC3D2779F4741408 /* Pods-DI Part 3 - GCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI Part 3 - GCD.debug.xcconfig"; path = "Target Support Files/Pods-DI Part 3 - GCD/Pods-DI Part 3 - GCD.debug.xcconfig"; sourceTree = "<group>"; };
+		A955B006CCDB1DA4BBF2647C /* Pods_DI_Part_3___GCD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_DI_Part_3___GCD.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4286F94D03C56C0FC1DB82A /* Pods-DI Part 3 - GCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DI Part 3 - GCD.release.xcconfig"; path = "Target Support Files/Pods-DI Part 3 - GCD/Pods-DI Part 3 - GCD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B155448A2E08D645D1571FE /* Pods_DI_Part_3___GCD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				5B47176B2A2650230038121D /* DI Part 3 - GCD */,
 				5B47176A2A2650230038121D /* Products */,
+				8EFEBFBA3BF477DCB4463DE7 /* Pods */,
+				A9E86568A24E48CE77905D45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +69,7 @@
 		5B47176B2A2650230038121D /* DI Part 3 - GCD */ = {
 			isa = PBXGroup;
 			children = (
+				5B4717842A26D6E70038121D /* Model */,
 				5B47176C2A2650230038121D /* AppDelegate.swift */,
 				5B47176E2A2650230038121D /* SceneDelegate.swift */,
 				5B4717702A2650230038121D /* ViewController.swift */,
@@ -67,6 +81,33 @@
 			path = "DI Part 3 - GCD";
 			sourceTree = "<group>";
 		};
+		5B4717842A26D6E70038121D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B4717802A2657700038121D /* Response.swift */,
+				5B4717852A26D77D0038121D /* ParkInfo.swift */,
+				5B4717822A26D6E20038121D /* ParkData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8EFEBFBA3BF477DCB4463DE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69F52F90AC3D2779F4741408 /* Pods-DI Part 3 - GCD.debug.xcconfig */,
+				C4286F94D03C56C0FC1DB82A /* Pods-DI Part 3 - GCD.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A9E86568A24E48CE77905D45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A955B006CCDB1DA4BBF2647C /* Pods_DI_Part_3___GCD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B47177D2A2650240038121D /* Build configuration list for PBXNativeTarget "DI Part 3 - GCD" */;
 			buildPhases = (
+				60B4DC307DB5FF0954FF2A48 /* [CP] Check Pods Manifest.lock */,
 				5B4717652A2650230038121D /* Sources */,
 				5B4717662A2650230038121D /* Frameworks */,
 				5B4717672A2650230038121D /* Resources */,
+				627B5395243F26011481917F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +176,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		60B4DC307DB5FF0954FF2A48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DI Part 3 - GCD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		627B5395243F26011481917F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DI Part 3 - GCD/Pods-DI Part 3 - GCD-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DI Part 3 - GCD/Pods-DI Part 3 - GCD-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DI Part 3 - GCD/Pods-DI Part 3 - GCD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5B4717652A2650230038121D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4717812A2657700038121D /* Response.swift in Sources */,
+				5B4717862A26D77D0038121D /* ParkInfo.swift in Sources */,
 				5B4717712A2650230038121D /* ViewController.swift in Sources */,
+				5B4717832A26D6E20038121D /* ParkData.swift in Sources */,
 				5B47176D2A2650230038121D /* AppDelegate.swift in Sources */,
 				5B47176F2A2650230038121D /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +370,7 @@
 		};
 		5B47177E2A2650240038121D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69F52F90AC3D2779F4741408 /* Pods-DI Part 3 - GCD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +384,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +400,7 @@
 		};
 		5B47177F2A2650240038121D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4286F94D03C56C0FC1DB82A /* Pods-DI Part 3 - GCD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,6 +414,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
