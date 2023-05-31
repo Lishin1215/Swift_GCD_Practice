@@ -74,35 +74,35 @@ class ViewController: UIViewController {
                 }
                 group.leave() //結束離開group
             }
-            //等3個API都取得資料，再一起放入label
-            group.notify(queue: DispatchQueue.global()) {
-                print("all done, start changing label name")
-                
-                    DispatchQueue.main.async { //更新UI
-                        
-                        print(self.districtResultArray)
-                        self.districtLabelArray?[i].text = self.districtResultArray[i]
-                        self.locationLabelArray?[i].text = self.locationResultArray[i]
-                    }
-
-            }
+//            //等3個API都取得資料，再一起放入label
+//            group.notify(queue: DispatchQueue.global()) {
+//                print("all done, start changing label name")
+//
+//                    DispatchQueue.main.async { //更新UI
+//
+//                        print(self.districtResultArray)
+//                        self.districtLabelArray?[i].text = self.districtResultArray[i]
+//                        self.locationLabelArray?[i].text = self.locationResultArray[i]
+//                    }
+//
+//            }
             
         }
         
-//        //等3個API都取得資料，再一起放入label
-//        group.notify(queue: DispatchQueue.global()) {
-//            print("all done, start changing label name")
-//
-//            for i in 0 ..< (self.districtResultArray.count) {
-//                DispatchQueue.main.async { //更新UI
-//
-//                    print(self.districtResultArray)
-//                    self.districtLabelArray?[i].text = self.districtResultArray[i]
-//                    self.locationLabelArray?[i].text = self.locationResultArray[i]
-//                }
-//            }
-//
-//        }
+        //等3個API都取得資料，再一起放入label
+        group.notify(queue: DispatchQueue.global()) {
+            print("all done, start changing label name")
+
+            for i in 0 ..< (self.districtResultArray.count) {
+                DispatchQueue.main.async { //更新UI
+
+                    print(self.districtResultArray)
+                    self.districtLabelArray?[i].text = self.districtResultArray[i]
+                    self.locationLabelArray?[i].text = self.locationResultArray[i]
+                }
+            }
+
+        }
     }
     
     
